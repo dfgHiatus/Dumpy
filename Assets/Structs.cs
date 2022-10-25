@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
+using static FBData;
 
 public class FBData
 {
@@ -21,6 +22,11 @@ public class FBData
     {
         public EyeData eyeData;
         public FaceData faceData;
+
+        public override string ToString()
+        {
+            return "EyeData: " + eyeData.ToString() + " FaceData: " + faceData.ToString();
+        }
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -28,6 +34,11 @@ public class FBData
     {
         public Eye leftEye;
         public Eye rightEye;
+
+        public override string ToString()
+        {
+            return "LeftEye: " + leftEye.ToString() + " RightData: " + rightEye.ToString();
+        }
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -36,6 +47,11 @@ public class FBData
         public float confidence;
         public Vec3 position;
         public Quat rotation;
+
+        public override string ToString()
+        {
+            return "Confidence: " + confidence + ", Position: " + position.ToString() + ", Rotation: " + rotation.ToString();
+        }
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -44,6 +60,11 @@ public class FBData
         public float x;
         public float y;
         public float z;
+
+        public override string ToString()
+        {
+            return $"Vector3: X: {x}, Y: {y}, Z: {z})";
+        }
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -53,6 +74,11 @@ public class FBData
         public float y;
         public float z;
         public float w;
+
+        public override string ToString()
+        {
+            return $"Quaternion: X: {x}, Y: {y}, Z: {z}, W: {w})";
+        }
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -123,6 +149,77 @@ public class FBData
         public float Upper_Lid_Raiser_R;
         public float Upper_Lip_Raiser_L;
         public float Upper_Lip_Raiser_R;
+
+        public override string ToString()
+        {
+            return 
+                 "FaceData: " + 
+                 "\nFaceRegionConfidenceLower: " + FaceRegionConfidenceLower + 
+                 "\nFaceRegionConfidenceUpper: " + FaceRegionConfidenceUpper + 
+                 "\nBrow_Lowerer_L: " + Brow_Lowerer_L + 
+                 "\nBrow_Lowerer_R: " + Brow_Lowerer_R + 
+                 "\nCheek_Puff_L: " + Cheek_Puff_L + 
+                 "\nCheek_Puff_R: " + Cheek_Puff_R + 
+                 "\nCheek_Raiser_L: " + Cheek_Raiser_L + 
+                 "\nCheek_Raiser_R: " + Cheek_Raiser_R + 
+                 "\nCheek_Suck_L: " + Cheek_Suck_L + 
+                 "\nCheek_Suck_R: " + Cheek_Suck_R + 
+                 "\nChin_Raiser_B: " + Chin_Raiser_B + 
+                 "\nChin_Raiser_T: " + Chin_Raiser_T + 
+                 "\nDimpler_L: " + Dimpler_L + 
+                 "\nDimpler_R: " + Dimpler_R + 
+                 "\nEyes_Closed_L: " + Eyes_Closed_L + 
+                 "\nEyes_Closed_R: " + Eyes_Closed_R + 
+                 "\nEyes_Look_Down_L: " + Eyes_Look_Down_L + 
+                 "\nEyes_Look_Down_R: " + Eyes_Look_Down_R + 
+                 "\nEyes_Look_Left_L: " + Eyes_Look_Left_L + 
+                 "\nEyes_Look_Left_R: " + Eyes_Look_Left_R + 
+                 "\nEyes_Look_Right_L: " + Eyes_Look_Right_L + 
+                 "\nEyes_Look_Right_R: " + Eyes_Look_Right_R + 
+                 "\nEyes_Look_Up_L: " + Eyes_Look_Up_L + 
+                 "\nEyes_Look_Up_R: " + Eyes_Look_Up_R + 
+                 "\nInner_Brow_Raiser_L: " + Inner_Brow_Raiser_L + 
+                 "\nInner_Brow_Raiser_R: " + Inner_Brow_Raiser_R + 
+                 "\nJaw_Drop: " + Jaw_Drop + 
+                 "\nJaw_Sideways_Left: " + Jaw_Sideways_Left + 
+                 "\nJaw_Sideways_Right: " + Jaw_Sideways_Right + 
+                 "\nJaw_Thrust: " + Jaw_Thrust + 
+                 "\nLid_Tightener_L: " + Lid_Tightener_L + 
+                 "\nLid_Tightener_R: " + Lid_Tightener_R + 
+                 "\nLip_Corner_Depressor_L: " + Lip_Corner_Depressor_L + 
+                 "\nLip_Corner_Depressor_R: " + Lip_Corner_Depressor_R +
+                 "\nLip_Corner_Puller_L: " + Lip_Corner_Puller_L +
+                 "\nLip_Corner_Puller_R: " + Lip_Corner_Puller_R +
+                 "\nLip_Funneler_LB: " + Lip_Funneler_LB +
+                 "\nLip_Funneler_LT: " + Lip_Funneler_LT +
+                 "\nLip_Funneler_RB: " + Lip_Funneler_RB +
+                 "\nLip_Funneler_RT: " + Lip_Funneler_RT +
+                 "\nLip_Pressor_L: " + Lip_Pressor_L +
+                 "\nLip_Pressor_R: " + Lip_Pressor_R +
+                 "\nLip_Pucker_L: " + Lip_Pucker_L +
+                 "\nLip_Pucker_R: " + Lip_Pucker_R +
+                 "\nLip_Stretcher_L: " + Lip_Stretcher_L +
+                 "\nLip_Stretcher_R: " + Lip_Stretcher_R +
+                 "\nLip_Suck_LB: " + Lip_Suck_LB +
+                 "\nLip_Suck_LT: " + Lip_Suck_LT +
+                 "\nLip_Suck_RB: " + Lip_Suck_RB +
+                 "\nLip_Suck_RT: " + Lip_Suck_RT +
+                 "\nLip_Tightener_L: " + Lip_Tightener_L +
+                 "\nLip_Tightener_R: " + Lip_Tightener_R +
+                 "\nLips_Toward: " + Lips_Toward +
+                 "\nLower_Lip_Depressor_L: " + Lower_Lip_Depressor_L +
+                 "\nLower_Lip_Depressor_R: " + Lower_Lip_Depressor_R +
+                 "\nMouth_Left: " + Mouth_Left +
+                 "\nMouth_Right: " + Mouth_Right +
+                 "\nNose_Wrinkler_L: " + Nose_Wrinkler_L +
+                 "\nNose_Wrinkler_R: " + Nose_Wrinkler_R +
+                 "\nOuter_Brow_Raiser_L: " + Outer_Brow_Raiser_L +
+                 "\nOuter_Brow_Raiser_R: " + Outer_Brow_Raiser_R +
+                 "\nUpper_Lid_Raiser_L: " + Upper_Lid_Raiser_L +
+                 "\nUpper_Lid_Raiser_R: " + Upper_Lid_Raiser_R +
+                 "\nUpper_Lip_Raiser_L: " + Upper_Lip_Raiser_L +
+                 "\nUpper_Lip_Raiser_R: " + Upper_Lip_Raiser_R;
+        }
     }
 
     // Auto-generated
@@ -213,7 +310,6 @@ public class FBData
         allData.faceData.Upper_Lid_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lid_Raiser_R, out val) ? val : 0;
         allData.faceData.Upper_Lip_Raiser_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lip_Raiser_L, out val) ? val : 0;
         allData.faceData.Upper_Lip_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lip_Raiser_R, out val) ? val : 0;
-
 
         #endregion Face
 
