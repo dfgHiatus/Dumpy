@@ -39,6 +39,21 @@ public class OVRProjectConfigEditor : Editor
         // Target Devices
         EditorGUILayout.LabelField("Target Devices", EditorStyles.boldLabel);
         bool useOculusXRSettings = false;
+
+#if PRIORITIZE_OCULUS_XR_SETTINGS
+        EditorGUILayout.LabelField("Configure Target Devices in Oculus XR Plugin Settings:", GUILayout.Width(320));
+        if (GUILayout.Button("Open Settings"))
+            SettingsService.OpenProjectSettings("Project/XR Plug-in Management/Oculus");
+#if !USING_QUEST_PRO_COMPATIBLE_OCULUS_XR_PLUGIN_VERSION
+        ++EditorGUI.indentLevel;
+        EditorGUILayout.LabelField("Note: The currently installed Oculus XR Plugin version does not support "
+               + "configuring Quest Pro as a target device. Please install a compatible version:"
+               + "\n2.2.0-preview.1 or newer\n3.2.1 or newer", EditorStyles.wordWrappedMiniLabel);
+        --EditorGUI.indentLevel;
+#endif
+        useOculusXRSettings = true;
+#endif
+
         if (!useOculusXRSettings)
         {
             bool hasModified = false;

@@ -216,47 +216,6 @@ public class OVRManagerEditor : Editor
 
         #endregion
 
-#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN || UNITY_ANDROID
-        EditorGUILayout.Space();
-        manager.expandFeatureFidelitySystemPropertySheet = EditorGUILayout.BeginFoldoutHeaderGroup(manager.expandFeatureFidelitySystemPropertySheet, "Feature Fidelity System (Quest)");
-        if (manager.expandFeatureFidelitySystemPropertySheet)
-        {
-            if (projectConfig.experimentalFeaturesEnabled)
-            {
-                OVREditorUtil.SetupBoolField(target, "Feature Fidelity System Activated", ref manager.featureFidelitySystemActivated, ref modified);
-                if (manager.featureFidelitySystemActivated)
-                {
-                    EditorGUI.indentLevel++;
-
-                    System.Action<string, OVRManager.FeatureFidelityGroup> setupFeatureFidelityFields = (featureName, fidelityGroup) =>
-                    {
-                        EditorGUILayout.LabelField(featureName);
-                        EditorGUI.indentLevel++;
-                        OVREditorUtil.SetupEnumField(target, "EnableState", ref fidelityGroup.targetFeatureEnabled, ref modified);
-                        OVREditorUtil.SetupEnumField(target, "Fidelity", ref fidelityGroup.targetFeatureFidelity, ref modified);
-                        EditorGUI.indentLevel--;
-                    };
-
-                    setupFeatureFidelityFields("HandTracking", manager.handTrackingFeatureFidelityGroup);
-                    setupFeatureFidelityFields("KeyboardTracking", manager.keyboardTrackingFeatureFidelityGroup);
-                    setupFeatureFidelityFields("EyeTracking", manager.eyeTrackingFeatureFidelityGroup);
-                    setupFeatureFidelityFields("FaceTracking", manager.faceTrackingFeatureFidelityGroup);
-                    setupFeatureFidelityFields("BodyTracking", manager.bodyTrackingFeatureFidelityGroup);
-                    setupFeatureFidelityFields("Passthrough", manager.passthroughFeatureFidelityGroup);
-                    setupFeatureFidelityFields("GazeBasedFoveatedRendering", manager.gaseBasedFoveatedRenderingFeatureFidelityGroup);
-
-                    EditorGUI.indentLevel--;
-                }
-            }
-            else
-            {
-                EditorGUI.BeginDisabledGroup(true);
-                EditorGUILayout.LabelField("Requires Experimental Features to be enabled in the Experimental section of the Quest features.", EditorStyles.wordWrappedLabel);
-                EditorGUI.EndDisabledGroup();
-            }
-        }
-        EditorGUILayout.EndFoldoutHeaderGroup();
-#endif // UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN || UNITY_ANDROID
 
         if (modified)
         {

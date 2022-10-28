@@ -85,7 +85,6 @@ namespace Oculus.XR
 			"XR_FB_hand_tracking_aim " +
 			"XR_FB_touch_controller_pro " +
 			"XR_FB_touch_controller_extras " +
-			"XR_META_feature_fidelity " +
 			""
 			;
 	}

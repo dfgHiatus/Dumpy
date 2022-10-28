@@ -1616,12 +1616,13 @@ namespace Oculus.Platform
 
     /// Retrieve a list of Purchase that the Logged-In-User has made. This list
     /// will also contain consumable purchases that have not been consumed.
+    /// \param fetchDeveloperPayload If true, fetches the developer payload (capa required)
     ///
-    public static Request<Models.PurchaseList> GetViewerPurchases()
+    public static Request<Models.PurchaseList> GetViewerPurchases(bool fetchDeveloperPayload = false)
     {
       if (Core.IsInitialized())
       {
-        return new Request<Models.PurchaseList>(CAPI.ovr_IAP_GetViewerPurchases());
+        return new Request<Models.PurchaseList>(CAPI.ovr_IAP_GetViewerPurchases(fetchDeveloperPayload));
       }
 
       Debug.LogError(Oculus.Platform.Core.PlatformUninitializedError);

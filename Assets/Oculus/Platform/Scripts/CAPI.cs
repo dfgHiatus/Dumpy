@@ -1052,7 +1052,7 @@ namespace Oculus.Platform
     public static extern ulong ovr_IAP_GetProductsBySKU(string[] skus, int count);
 
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
-    public static extern ulong ovr_IAP_GetViewerPurchases();
+    public static extern ulong ovr_IAP_GetViewerPurchases(bool fetchDeveloperPayload);
 
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern ulong ovr_IAP_GetViewerPurchasesDurableCache();
@@ -3513,6 +3513,14 @@ namespace Oculus.Platform
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern bool ovr_ProductArray_HasNextPage(IntPtr obj);
 
+    public static string ovr_Purchase_GetDeveloperPayload(IntPtr obj) {
+      var result = StringFromNative(ovr_Purchase_GetDeveloperPayload_Native(obj));
+      return result;
+    }
+
+    [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl, EntryPoint="ovr_Purchase_GetDeveloperPayload")]
+    private static extern IntPtr ovr_Purchase_GetDeveloperPayload_Native(IntPtr obj);
+
     public static DateTime ovr_Purchase_GetExpirationTime(IntPtr obj) {
       var result = DateTimeFromNative(ovr_Purchase_GetExpirationTime_Native(obj));
       return result;
@@ -3539,6 +3547,14 @@ namespace Oculus.Platform
 
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl, EntryPoint="ovr_Purchase_GetPurchaseStrID")]
     private static extern IntPtr ovr_Purchase_GetPurchaseStrID_Native(IntPtr obj);
+
+    public static string ovr_Purchase_GetReportingId(IntPtr obj) {
+      var result = StringFromNative(ovr_Purchase_GetReportingId_Native(obj));
+      return result;
+    }
+
+    [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl, EntryPoint="ovr_Purchase_GetReportingId")]
+    private static extern IntPtr ovr_Purchase_GetReportingId_Native(IntPtr obj);
 
     public static string ovr_Purchase_GetSKU(IntPtr obj) {
       var result = StringFromNative(ovr_Purchase_GetSKU_Native(obj));

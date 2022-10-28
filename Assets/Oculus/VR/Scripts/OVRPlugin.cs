@@ -518,38 +518,6 @@ public static partial class OVRPlugin
 		EnumSize = 0x7FFFFFFF
 	}
 
-	public enum FeatureFidelity
-	{
-		Default = -1,
-		Low = 0,
-		MediumLow = 1,
-		Medium = 2,
-		MediumHigh = 3,
-		High = 4,
-		EnumSize = 0x7FFFFFFF
-	}
-
-	public enum FeatureEnableState
-	{
-		Default = -1,
-		Off = 0,
-		On = 1,
-		EnumSize = 0x7FFFFFFF
-	}
-
-	public struct FeatureState
-	{
-		public FeatureEnableState enableState;
-		public FeatureFidelity fidelity;
-
-		public FeatureState(FeatureEnableState enableState, FeatureFidelity fidelity)
-		{
-			this.enableState = enableState;
-			this.fidelity = fidelity;
-		}
-
-		public static FeatureState Default = new FeatureState(FeatureEnableState.Default, FeatureFidelity.Default);
-	}
 
 	[StructLayout(LayoutKind.Sequential)]
 	public struct CameraDeviceIntrinsicsParameters
@@ -3136,48 +3104,46 @@ public static partial class OVRPlugin
 			if (shape == OverlayShape.Cylinder || shape == OverlayShape.Cubemap)
 			{
 #if UNITY_ANDROID
-				if (version >= OVRP_1_7_0.version)
-					flags |= (uint)(shape) << OverlayShapeFlagShift;
-				else
-#else
-				if (shape == OverlayShape.Cubemap && version >= OVRP_1_10_0.version)
-					flags |= (uint)(shape) << OverlayShapeFlagShift;
-				else if (shape == OverlayShape.Cylinder && version >= OVRP_1_16_0.version)
-					flags |= (uint)(shape) << OverlayShapeFlagShift;
-				else
-#endif
+				if (version < OVRP_1_7_0.version)
 					return false;
+#else
+				if (shape == OverlayShape.Cubemap && version < OVRP_1_10_0.version)
+					return false;
+				else if (shape == OverlayShape.Cylinder && version < OVRP_1_16_0.version)
+					return false;
+#endif
 			}
 
 			if (shape == OverlayShape.OffcenterCubemap)
 			{
 #if UNITY_ANDROID
-				if (version >= OVRP_1_11_0.version)
-					flags |= (uint)(shape) << OverlayShapeFlagShift;
-				else
-#endif
+				if (version < OVRP_1_11_0.version)
 					return false;
+#else
+				return false;
+#endif
 			}
 
 			if (shape == OverlayShape.Equirect)
 			{
 #if UNITY_ANDROID
-				if (version >= OVRP_1_21_0.version)
-					flags |= (uint)(shape) << OverlayShapeFlagShift;
-				else
-#endif
+				if (version < OVRP_1_21_0.version)
 					return false;
+#else
+				return false;
+#endif
 			}
 
 			if (shape == OverlayShape.Fisheye)
 			{
 #if UNITY_ANDROID
-				if(version >= OVRP_1_55_0.version)
-					flags |= (uint)(shape) << OverlayShapeFlagShift;
-				else
-#endif
+				if(version < OVRP_1_55_0.version)
 					return false;
+#else
+				return false;
+#endif
 			}
+
 			if (version >= OVRP_1_34_0.version && layerId != -1)
 				return OVRP_1_34_0.ovrp_EnqueueSubmitLayer2(flags, leftTexture, rightTexture, layerId, frameIndex, ref pose, ref scale, layerIndex,
 					overrideTextureRectMatrix ? Bool.True : Bool.False, ref textureRectMatrix, overridePerLayerColorScaleAndOffset ? Bool.True : Bool.False, ref colorScale, ref colorOffset) == Result.Success;
@@ -3192,7 +3158,7 @@ public static partial class OVRPlugin
 
 		return OVRP_0_1_1.ovrp_SetOverlayQuad2(ToBool(onTop), ToBool(headLocked), leftTexture, IntPtr.Zero, pose, scale) == Bool.True;
 #endif
-	}
+			}
 
 	public static LayerDesc CalculateLayerDesc(OverlayShape shape, LayerLayout layout, Sizei textureSize,
 		int mipLevels, int sampleCount, EyeTextureFormat format, int layerFlags)
@@ -8311,49 +8277,6 @@ public static partial class OVRPlugin
 		}
 	}
 
-	public static bool FeatureFidelitySetFeatureEnable(FeatureType feature, FeatureEnableState featureEnableState)
-	{
-#if OVRPLUGIN_UNSUPPORTED_PLATFORM
-		return false;
-#else
-		if (version >= OVRP_1_78_0.version)
-		{
-			return OVRP_1_78_0.ovrp_FeatureFidelitySetFeatureEnable(feature, featureEnableState) == Result.Success;
-		}
-		else
-			return false;
-#endif
-	}
-
-	public static bool FeatureFidelitySetFeatureFidelity(FeatureType feature, FeatureFidelity featureFidelity)
-	{
-#if OVRPLUGIN_UNSUPPORTED_PLATFORM
-		return false;
-#else
-		if (version >= OVRP_1_78_0.version)
-		{
-			return OVRP_1_78_0.ovrp_FeatureFidelitySetFeatureFidelity(feature, featureFidelity) == Result.Success;
-		}
-		else
-			return false;
-#endif
-	}
-
-	public static bool FeatureFidelityGetFeatureState(FeatureType feature, out FeatureState idealState, out FeatureState currentState)
-	{
-		idealState = FeatureState.Default;
-		currentState = FeatureState.Default;
-#if OVRPLUGIN_UNSUPPORTED_PLATFORM
-		return false;
-#else
-		if (version >= OVRP_1_78_0.version)
-		{
-			return OVRP_1_78_0.ovrp_FeatureFidelityGetFeatureState(feature, out idealState, out currentState) == Result.Success;
-		}
-		else
-			return false;
-#endif
-	}
 
 
 	public class UnityOpenXR
@@ -9843,14 +9766,6 @@ public static partial class OVRPlugin
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result ovrp_GetEyeGazesState(Step stepId, int frameIndex, out EyeGazesStateInternal eyeGazesState);
 
-		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern Result ovrp_FeatureFidelitySetFeatureEnable(FeatureType feature, FeatureEnableState featureEnableState);
-
-		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern Result ovrp_FeatureFidelitySetFeatureFidelity(FeatureType feature, FeatureFidelity featureFidelity);
-
-		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern Result ovrp_FeatureFidelityGetFeatureState(FeatureType feature, out FeatureState idealState, out FeatureState currentState);
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result ovrp_GetControllerState5(uint controllerMask, ref ControllerState5 controllerState);

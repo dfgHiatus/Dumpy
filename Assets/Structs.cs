@@ -86,69 +86,69 @@ public class FBData
     {
         public float FaceRegionConfidenceLower;
         public float FaceRegionConfidenceUpper;
-        public float Brow_Lowerer_L;
-        public float Brow_Lowerer_R;
-        public float Cheek_Puff_L;
-        public float Cheek_Puff_R;
-        public float Cheek_Raiser_L;
-        public float Cheek_Raiser_R;
-        public float Cheek_Suck_L;
-        public float Cheek_Suck_R;
-        public float Chin_Raiser_B;
-        public float Chin_Raiser_T;
-        public float Dimpler_L;
-        public float Dimpler_R;
-        public float Eyes_Closed_L;
-        public float Eyes_Closed_R;
-        public float Eyes_Look_Down_L;
-        public float Eyes_Look_Down_R;
-        public float Eyes_Look_Left_L;
-        public float Eyes_Look_Left_R;
-        public float Eyes_Look_Right_L;
-        public float Eyes_Look_Right_R;
-        public float Eyes_Look_Up_L;
-        public float Eyes_Look_Up_R;
-        public float Inner_Brow_Raiser_L;
-        public float Inner_Brow_Raiser_R;
-        public float Jaw_Drop;
-        public float Jaw_Sideways_Left;
-        public float Jaw_Sideways_Right;
-        public float Jaw_Thrust;
-        public float Lid_Tightener_L;
-        public float Lid_Tightener_R;
-        public float Lip_Corner_Depressor_L;
-        public float Lip_Corner_Depressor_R;
-        public float Lip_Corner_Puller_L;
-        public float Lip_Corner_Puller_R;
-        public float Lip_Funneler_LB;
-        public float Lip_Funneler_LT;
-        public float Lip_Funneler_RB;
-        public float Lip_Funneler_RT;
-        public float Lip_Pressor_L;
-        public float Lip_Pressor_R;
-        public float Lip_Pucker_L;
-        public float Lip_Pucker_R;
-        public float Lip_Stretcher_L;
-        public float Lip_Stretcher_R;
-        public float Lip_Suck_LB;
-        public float Lip_Suck_LT;
-        public float Lip_Suck_RB;
-        public float Lip_Suck_RT;
-        public float Lip_Tightener_L;
-        public float Lip_Tightener_R;
-        public float Lips_Toward;
-        public float Lower_Lip_Depressor_L;
-        public float Lower_Lip_Depressor_R;
-        public float Mouth_Left;
-        public float Mouth_Right;
-        public float Nose_Wrinkler_L;
-        public float Nose_Wrinkler_R;
-        public float Outer_Brow_Raiser_L;
-        public float Outer_Brow_Raiser_R;
-        public float Upper_Lid_Raiser_L;
-        public float Upper_Lid_Raiser_R;
-        public float Upper_Lip_Raiser_L;
-        public float Upper_Lip_Raiser_R;
+        public float BrowLowererL;
+        public float BrowLowererR;
+        public float CheekPuffL;
+        public float CheekPuffR;
+        public float CheekRaiserL;
+        public float CheekRaiserR;
+        public float CheekSuckL;
+        public float CheekSuckR;
+        public float ChinRaiserB;
+        public float ChinRaiserT;
+        public float DimplerL;
+        public float DimplerR;
+        public float EyesClosedL;
+        public float EyesClosedR;
+        public float EyesLookDownL;
+        public float EyesLookDownR;
+        public float EyesLookLeftL;
+        public float EyesLookLeftR;
+        public float EyesLookRightL;
+        public float EyesLookRightR;
+        public float EyesLookUpL;
+        public float EyesLookUpR;
+        public float InnerBrowRaiserL;
+        public float InnerBrowRaiserR;
+        public float JawDrop;
+        public float JawSidewaysLeft;
+        public float JawSidewaysRight;
+        public float JawThrust;
+        public float LidTightenerL;
+        public float LidTightenerR;
+        public float LipCornerDepressorL;
+        public float LipCornerDepressorR;
+        public float LipCornerPullerL;
+        public float LipCornerPullerR;
+        public float LipFunnelerLB;
+        public float LipFunnelerLT;
+        public float LipFunnelerRB;
+        public float LipFunnelerRT;
+        public float LipPressorL;
+        public float LipPressorR;
+        public float LipPuckerL;
+        public float LipPuckerR;
+        public float LipStretcherL;
+        public float LipStretcherR;
+        public float LipSuckLB;
+        public float LipSuckLT;
+        public float LipSuckRB;
+        public float LipSuckRT;
+        public float LipTightenerL;
+        public float LipTightenerR;
+        public float LipsToward;
+        public float LowerLipDepressorL;
+        public float LowerLipDepressorR;
+        public float MouthLeft;
+        public float MouthRight;
+        public float NoseWrinklerL;
+        public float NoseWrinklerR;
+        public float OuterBrowRaiserL;
+        public float OuterBrowRaiserR;
+        public float UpperLidRaiserL;
+        public float UpperLidRaiserR;
+        public float UpperLipRaiserL;
+        public float UpperLipRaiserR;
 
         public override string ToString()
         {
@@ -156,69 +156,69 @@ public class FBData
                  "FaceData: " + 
                  "\nFaceRegionConfidenceLower: " + FaceRegionConfidenceLower + 
                  "\nFaceRegionConfidenceUpper: " + FaceRegionConfidenceUpper + 
-                 "\nBrow_Lowerer_L: " + Brow_Lowerer_L + 
-                 "\nBrow_Lowerer_R: " + Brow_Lowerer_R + 
-                 "\nCheek_Puff_L: " + Cheek_Puff_L + 
-                 "\nCheek_Puff_R: " + Cheek_Puff_R + 
-                 "\nCheek_Raiser_L: " + Cheek_Raiser_L + 
-                 "\nCheek_Raiser_R: " + Cheek_Raiser_R + 
-                 "\nCheek_Suck_L: " + Cheek_Suck_L + 
-                 "\nCheek_Suck_R: " + Cheek_Suck_R + 
-                 "\nChin_Raiser_B: " + Chin_Raiser_B + 
-                 "\nChin_Raiser_T: " + Chin_Raiser_T + 
-                 "\nDimpler_L: " + Dimpler_L + 
-                 "\nDimpler_R: " + Dimpler_R + 
-                 "\nEyes_Closed_L: " + Eyes_Closed_L + 
-                 "\nEyes_Closed_R: " + Eyes_Closed_R + 
-                 "\nEyes_Look_Down_L: " + Eyes_Look_Down_L + 
-                 "\nEyes_Look_Down_R: " + Eyes_Look_Down_R + 
-                 "\nEyes_Look_Left_L: " + Eyes_Look_Left_L + 
-                 "\nEyes_Look_Left_R: " + Eyes_Look_Left_R + 
-                 "\nEyes_Look_Right_L: " + Eyes_Look_Right_L + 
-                 "\nEyes_Look_Right_R: " + Eyes_Look_Right_R + 
-                 "\nEyes_Look_Up_L: " + Eyes_Look_Up_L + 
-                 "\nEyes_Look_Up_R: " + Eyes_Look_Up_R + 
-                 "\nInner_Brow_Raiser_L: " + Inner_Brow_Raiser_L + 
-                 "\nInner_Brow_Raiser_R: " + Inner_Brow_Raiser_R + 
-                 "\nJaw_Drop: " + Jaw_Drop + 
-                 "\nJaw_Sideways_Left: " + Jaw_Sideways_Left + 
-                 "\nJaw_Sideways_Right: " + Jaw_Sideways_Right + 
-                 "\nJaw_Thrust: " + Jaw_Thrust + 
-                 "\nLid_Tightener_L: " + Lid_Tightener_L + 
-                 "\nLid_Tightener_R: " + Lid_Tightener_R + 
-                 "\nLip_Corner_Depressor_L: " + Lip_Corner_Depressor_L + 
-                 "\nLip_Corner_Depressor_R: " + Lip_Corner_Depressor_R +
-                 "\nLip_Corner_Puller_L: " + Lip_Corner_Puller_L +
-                 "\nLip_Corner_Puller_R: " + Lip_Corner_Puller_R +
-                 "\nLip_Funneler_LB: " + Lip_Funneler_LB +
-                 "\nLip_Funneler_LT: " + Lip_Funneler_LT +
-                 "\nLip_Funneler_RB: " + Lip_Funneler_RB +
-                 "\nLip_Funneler_RT: " + Lip_Funneler_RT +
-                 "\nLip_Pressor_L: " + Lip_Pressor_L +
-                 "\nLip_Pressor_R: " + Lip_Pressor_R +
-                 "\nLip_Pucker_L: " + Lip_Pucker_L +
-                 "\nLip_Pucker_R: " + Lip_Pucker_R +
-                 "\nLip_Stretcher_L: " + Lip_Stretcher_L +
-                 "\nLip_Stretcher_R: " + Lip_Stretcher_R +
-                 "\nLip_Suck_LB: " + Lip_Suck_LB +
-                 "\nLip_Suck_LT: " + Lip_Suck_LT +
-                 "\nLip_Suck_RB: " + Lip_Suck_RB +
-                 "\nLip_Suck_RT: " + Lip_Suck_RT +
-                 "\nLip_Tightener_L: " + Lip_Tightener_L +
-                 "\nLip_Tightener_R: " + Lip_Tightener_R +
-                 "\nLips_Toward: " + Lips_Toward +
-                 "\nLower_Lip_Depressor_L: " + Lower_Lip_Depressor_L +
-                 "\nLower_Lip_Depressor_R: " + Lower_Lip_Depressor_R +
-                 "\nMouth_Left: " + Mouth_Left +
-                 "\nMouth_Right: " + Mouth_Right +
-                 "\nNose_Wrinkler_L: " + Nose_Wrinkler_L +
-                 "\nNose_Wrinkler_R: " + Nose_Wrinkler_R +
-                 "\nOuter_Brow_Raiser_L: " + Outer_Brow_Raiser_L +
-                 "\nOuter_Brow_Raiser_R: " + Outer_Brow_Raiser_R +
-                 "\nUpper_Lid_Raiser_L: " + Upper_Lid_Raiser_L +
-                 "\nUpper_Lid_Raiser_R: " + Upper_Lid_Raiser_R +
-                 "\nUpper_Lip_Raiser_L: " + Upper_Lip_Raiser_L +
-                 "\nUpper_Lip_Raiser_R: " + Upper_Lip_Raiser_R;
+                 "\nBrowLowererL: " + BrowLowererL + 
+                 "\nBrowLowererR: " + BrowLowererR + 
+                 "\nCheekPuffL: " + CheekPuffL + 
+                 "\nCheekPuffR: " + CheekPuffR + 
+                 "\nCheekRaiserL: " + CheekRaiserL + 
+                 "\nCheekRaiserR: " + CheekRaiserR + 
+                 "\nCheekSuckL: " + CheekSuckL + 
+                 "\nCheekSuckR: " + CheekSuckR + 
+                 "\nChinRaiserB: " + ChinRaiserB + 
+                 "\nChinRaiserT: " + ChinRaiserT + 
+                 "\nDimplerL: " + DimplerL + 
+                 "\nDimplerR: " + DimplerR + 
+                 "\nEyesClosedL: " + EyesClosedL + 
+                 "\nEyesClosedR: " + EyesClosedR + 
+                 "\nEyesLookDownL: " + EyesLookDownL + 
+                 "\nEyesLookDownR: " + EyesLookDownR + 
+                 "\nEyesLookLeftL: " + EyesLookLeftL + 
+                 "\nEyesLookLeftR: " + EyesLookLeftR + 
+                 "\nEyesLookRightL: " + EyesLookRightL + 
+                 "\nEyesLookRightR: " + EyesLookRightR + 
+                 "\nEyesLookUpL: " + EyesLookUpL + 
+                 "\nEyesLookUpR: " + EyesLookUpR + 
+                 "\nInnerBrowRaiserL: " + InnerBrowRaiserL + 
+                 "\nInnerBrowRaiserR: " + InnerBrowRaiserR + 
+                 "\nJawDrop: " + JawDrop + 
+                 "\nJawSidewaysLeft: " + JawSidewaysLeft + 
+                 "\nJawSidewaysRight: " + JawSidewaysRight + 
+                 "\nJawThrust: " + JawThrust + 
+                 "\nLidTightenerL: " + LidTightenerL + 
+                 "\nLidTightenerR: " + LidTightenerR + 
+                 "\nLipCornerDepressorL: " + LipCornerDepressorL + 
+                 "\nLipCornerDepressorR: " + LipCornerDepressorR +
+                 "\nLipCornerPullerL: " + LipCornerPullerL +
+                 "\nLipCornerPullerR: " + LipCornerPullerR +
+                 "\nLipFunnelerLB: " + LipFunnelerLB +
+                 "\nLipFunnelerLT: " + LipFunnelerLT +
+                 "\nLipFunnelerRB: " + LipFunnelerRB +
+                 "\nLipFunnelerRT: " + LipFunnelerRT +
+                 "\nLipPressorL: " + LipPressorL +
+                 "\nLipPressorR: " + LipPressorR +
+                 "\nLipPuckerL: " + LipPuckerL +
+                 "\nLipPuckerR: " + LipPuckerR +
+                 "\nLipStretcherL: " + LipStretcherL +
+                 "\nLipStretcherR: " + LipStretcherR +
+                 "\nLipSuckLB: " + LipSuckLB +
+                 "\nLipSuckLT: " + LipSuckLT +
+                 "\nLipSuckRB: " + LipSuckRB +
+                 "\nLipSuckRT: " + LipSuckRT +
+                 "\nLipTightenerL: " + LipTightenerL +
+                 "\nLipTightenerR: " + LipTightenerR +
+                 "\nLipsToward: " + LipsToward +
+                 "\nLowerLipDepressorL: " + LowerLipDepressorL +
+                 "\nLowerLipDepressorR: " + LowerLipDepressorR +
+                 "\nMouthLeft: " + MouthLeft +
+                 "\nMouthRight: " + MouthRight +
+                 "\nNoseWrinklerL: " + NoseWrinklerL +
+                 "\nNoseWrinklerR: " + NoseWrinklerR +
+                 "\nOuterBrowRaiserL: " + OuterBrowRaiserL +
+                 "\nOuterBrowRaiserR: " + OuterBrowRaiserR +
+                 "\nUpperLidRaiserL: " + UpperLidRaiserL +
+                 "\nUpperLidRaiserR: " + UpperLidRaiserR +
+                 "\nUpperLipRaiserL: " + UpperLipRaiserL +
+                 "\nUpperLipRaiserR: " + UpperLipRaiserR;
         }
     }
 
@@ -227,18 +227,24 @@ public class FBData
     {
         #region Left Eye
         allData.eyeData.leftEye.confidence = ovrLeftEye.Confidence;
+        allData.eyeData.leftEye.position.x = ovrLeftEye.gameObject.transform.localPosition.x;
+        allData.eyeData.leftEye.position.y = ovrLeftEye.gameObject.transform.localPosition.y;
+        allData.eyeData.leftEye.position.z = ovrLeftEye.gameObject.transform.localPosition.z;
         allData.eyeData.leftEye.rotation.x = ovrLeftEye.gameObject.transform.localRotation.x;
-        allData.eyeData.leftEye.rotation.x = ovrLeftEye.gameObject.transform.localRotation.y;
-        allData.eyeData.leftEye.rotation.x = ovrLeftEye.gameObject.transform.localRotation.z;
-        allData.eyeData.leftEye.rotation.x = ovrLeftEye.gameObject.transform.localRotation.w;
+        allData.eyeData.leftEye.rotation.y = ovrLeftEye.gameObject.transform.localRotation.y;
+        allData.eyeData.leftEye.rotation.z = ovrLeftEye.gameObject.transform.localRotation.z;
+        allData.eyeData.leftEye.rotation.w = ovrLeftEye.gameObject.transform.localRotation.w;
         #endregion Left Eye
 
         #region Right Eye
         allData.eyeData.rightEye.confidence = ovrRightEye.Confidence;
+        allData.eyeData.rightEye.position.x = ovrRightEye.gameObject.transform.localPosition.x;
+        allData.eyeData.rightEye.position.y = ovrRightEye.gameObject.transform.localPosition.y;
+        allData.eyeData.rightEye.position.z = ovrRightEye.gameObject.transform.localPosition.z;
         allData.eyeData.rightEye.rotation.x = ovrRightEye.gameObject.transform.localRotation.x;
-        allData.eyeData.rightEye.rotation.x = ovrRightEye.gameObject.transform.localRotation.y;
-        allData.eyeData.rightEye.rotation.x = ovrRightEye.gameObject.transform.localRotation.z;
-        allData.eyeData.rightEye.rotation.x = ovrRightEye.gameObject.transform.localRotation.w;
+        allData.eyeData.rightEye.rotation.y = ovrRightEye.gameObject.transform.localRotation.y;
+        allData.eyeData.rightEye.rotation.z = ovrRightEye.gameObject.transform.localRotation.z;
+        allData.eyeData.rightEye.rotation.w = ovrRightEye.gameObject.transform.localRotation.w;
         #endregion Right Eye
 
         float val;
@@ -247,69 +253,69 @@ public class FBData
         allData.faceData.FaceRegionConfidenceLower = ovrFace.TryGetWeightConfidence(OVRFaceExpressions.FaceRegionConfidence.Lower, out val) ? val : 0;
         allData.faceData.FaceRegionConfidenceUpper = ovrFace.TryGetWeightConfidence(OVRFaceExpressions.FaceRegionConfidence.Upper, out val) ? val : 0;
         
-        allData.faceData.Brow_Lowerer_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Brow_Lowerer_L, out val) ? val : 0;
-        allData.faceData.Brow_Lowerer_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Brow_Lowerer_R, out val) ? val : 0;
-        allData.faceData.Cheek_Puff_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Cheek_Puff_L, out val) ? val : 0;
-        allData.faceData.Cheek_Puff_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Cheek_Puff_R, out val) ? val : 0;
-        allData.faceData.Cheek_Raiser_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Cheek_Raiser_L, out val) ? val : 0;
-        allData.faceData.Cheek_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Cheek_Raiser_R, out val) ? val : 0;
-        allData.faceData.Cheek_Suck_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Cheek_Suck_L, out val) ? val : 0;
-        allData.faceData.Cheek_Suck_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Cheek_Suck_R, out val) ? val : 0;
-        allData.faceData.Chin_Raiser_B = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Chin_Raiser_B, out val) ? val : 0;
-        allData.faceData.Chin_Raiser_T = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Chin_Raiser_T, out val) ? val : 0;
-        allData.faceData.Dimpler_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Dimpler_L, out val) ? val : 0;
-        allData.faceData.Dimpler_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Dimpler_R, out val) ? val : 0;
-        allData.faceData.Eyes_Closed_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Closed_L, out val) ? val : 0;
-        allData.faceData.Eyes_Closed_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Closed_R, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Down_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Down_L, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Down_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Down_R, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Left_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Left_L, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Left_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Left_R, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Right_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Right_L, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Right_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Right_R, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Up_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Up_L, out val) ? val : 0;
-        allData.faceData.Eyes_Look_Up_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Eyes_Look_Up_R, out val) ? val : 0;
-        allData.faceData.Inner_Brow_Raiser_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Inner_Brow_Raiser_L, out val) ? val : 0;
-        allData.faceData.Inner_Brow_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Inner_Brow_Raiser_R, out val) ? val : 0;
-        allData.faceData.Jaw_Drop = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Jaw_Drop, out val) ? val : 0;
-        allData.faceData.Jaw_Sideways_Left = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Jaw_Sideways_Left, out val) ? val : 0;
-        allData.faceData.Jaw_Sideways_Right = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Jaw_Sideways_Right, out val) ? val : 0;
-        allData.faceData.Jaw_Thrust = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Jaw_Thrust, out val) ? val : 0;
-        allData.faceData.Lid_Tightener_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lid_Tightener_L, out val) ? val : 0;
-        allData.faceData.Lid_Tightener_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lid_Tightener_R, out val) ? val : 0;
-        allData.faceData.Lip_Corner_Depressor_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Corner_Depressor_L, out val) ? val : 0;
-        allData.faceData.Lip_Corner_Depressor_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Corner_Depressor_R, out val) ? val : 0;
-        allData.faceData.Lip_Corner_Puller_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Corner_Puller_L, out val) ? val : 0;
-        allData.faceData.Lip_Corner_Puller_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Corner_Puller_R, out val) ? val : 0;
-        allData.faceData.Lip_Funneler_LB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Funneler_LB, out val) ? val : 0;
-        allData.faceData.Lip_Funneler_LT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Funneler_LT, out val) ? val : 0;
-        allData.faceData.Lip_Funneler_RB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Funneler_RB, out val) ? val : 0;
-        allData.faceData.Lip_Funneler_RT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Funneler_RT, out val) ? val : 0;
-        allData.faceData.Lip_Pressor_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Pressor_L, out val) ? val : 0;
-        allData.faceData.Lip_Pressor_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Pressor_R, out val) ? val : 0;
-        allData.faceData.Lip_Pucker_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Pucker_L, out val) ? val : 0;
-        allData.faceData.Lip_Pucker_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Pucker_R, out val) ? val : 0;
-        allData.faceData.Lip_Stretcher_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Stretcher_L, out val) ? val : 0;
-        allData.faceData.Lip_Stretcher_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Stretcher_R, out val) ? val : 0;
-        allData.faceData.Lip_Suck_LB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Suck_LB, out val) ? val : 0;
-        allData.faceData.Lip_Suck_LT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Suck_LT, out val) ? val : 0;
-        allData.faceData.Lip_Suck_RB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Suck_RB, out val) ? val : 0;
-        allData.faceData.Lip_Suck_RT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Suck_RT, out val) ? val : 0;
-        allData.faceData.Lip_Tightener_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Tightener_L, out val) ? val : 0;
-        allData.faceData.Lip_Tightener_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lip_Tightener_R, out val) ? val : 0;
-        allData.faceData.Lips_Toward = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lips_Toward, out val) ? val : 0;
-        allData.faceData.Lower_Lip_Depressor_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lower_Lip_Depressor_L, out val) ? val : 0;
-        allData.faceData.Lower_Lip_Depressor_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Lower_Lip_Depressor_R, out val) ? val : 0;
-        allData.faceData.Mouth_Left = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Mouth_Left, out val) ? val : 0;
-        allData.faceData.Mouth_Right = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Mouth_Right, out val) ? val : 0;
-        allData.faceData.Nose_Wrinkler_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Nose_Wrinkler_L, out val) ? val : 0;
-        allData.faceData.Nose_Wrinkler_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Nose_Wrinkler_R, out val) ? val : 0;
-        allData.faceData.Outer_Brow_Raiser_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Outer_Brow_Raiser_L, out val) ? val : 0;
-        allData.faceData.Outer_Brow_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Outer_Brow_Raiser_R, out val) ? val : 0;
-        allData.faceData.Upper_Lid_Raiser_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lid_Raiser_L, out val) ? val : 0;
-        allData.faceData.Upper_Lid_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lid_Raiser_R, out val) ? val : 0;
-        allData.faceData.Upper_Lip_Raiser_L = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lip_Raiser_L, out val) ? val : 0;
-        allData.faceData.Upper_Lip_Raiser_R = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.Upper_Lip_Raiser_R, out val) ? val : 0;
+        allData.faceData.BrowLowererL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.BrowLowererL, out val) ? val : 0;
+        allData.faceData.BrowLowererR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.BrowLowererR, out val) ? val : 0;
+        allData.faceData.CheekPuffL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.CheekPuffL, out val) ? val : 0;
+        allData.faceData.CheekPuffR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.CheekPuffR, out val) ? val : 0;
+        allData.faceData.CheekRaiserL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.CheekRaiserL, out val) ? val : 0;
+        allData.faceData.CheekRaiserR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.CheekRaiserR, out val) ? val : 0;
+        allData.faceData.CheekSuckL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.CheekSuckL, out val) ? val : 0;
+        allData.faceData.CheekSuckR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.CheekSuckR, out val) ? val : 0;
+        allData.faceData.ChinRaiserB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.ChinRaiserB, out val) ? val : 0;
+        allData.faceData.ChinRaiserT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.ChinRaiserT, out val) ? val : 0;
+        allData.faceData.DimplerL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.DimplerL, out val) ? val : 0;
+        allData.faceData.DimplerR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.DimplerR, out val) ? val : 0;
+        allData.faceData.EyesClosedL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesClosedL, out val) ? val : 0;
+        allData.faceData.EyesClosedR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesClosedR, out val) ? val : 0;
+        allData.faceData.EyesLookDownL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookDownL, out val) ? val : 0;
+        allData.faceData.EyesLookDownR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookDownR, out val) ? val : 0;
+        allData.faceData.EyesLookLeftL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookLeftL, out val) ? val : 0;
+        allData.faceData.EyesLookLeftR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookLeftR, out val) ? val : 0;
+        allData.faceData.EyesLookRightL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookRightL, out val) ? val : 0;
+        allData.faceData.EyesLookRightR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookRightR, out val) ? val : 0;
+        allData.faceData.EyesLookUpL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookUpL, out val) ? val : 0;
+        allData.faceData.EyesLookUpR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.EyesLookUpR, out val) ? val : 0;
+        allData.faceData.InnerBrowRaiserL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.InnerBrowRaiserL, out val) ? val : 0;
+        allData.faceData.InnerBrowRaiserR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.InnerBrowRaiserR, out val) ? val : 0;
+        allData.faceData.JawDrop = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.JawDrop, out val) ? val : 0;
+        allData.faceData.JawSidewaysLeft = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.JawSidewaysLeft, out val) ? val : 0;
+        allData.faceData.JawSidewaysRight = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.JawSidewaysRight, out val) ? val : 0;
+        allData.faceData.JawThrust = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.JawThrust, out val) ? val : 0;
+        allData.faceData.LidTightenerL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LidTightenerL, out val) ? val : 0;
+        allData.faceData.LidTightenerR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LidTightenerR, out val) ? val : 0;
+        allData.faceData.LipCornerDepressorL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipCornerDepressorL, out val) ? val : 0;
+        allData.faceData.LipCornerDepressorR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipCornerDepressorR, out val) ? val : 0;
+        allData.faceData.LipCornerPullerL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipCornerPullerL, out val) ? val : 0;
+        allData.faceData.LipCornerPullerR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipCornerPullerR, out val) ? val : 0;
+        allData.faceData.LipFunnelerLB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipFunnelerLB, out val) ? val : 0;
+        allData.faceData.LipFunnelerLT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipFunnelerLT, out val) ? val : 0;
+        allData.faceData.LipFunnelerRB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipFunnelerRB, out val) ? val : 0;
+        allData.faceData.LipFunnelerRT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipFunnelerRT, out val) ? val : 0;
+        allData.faceData.LipPressorL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipPressorL, out val) ? val : 0;
+        allData.faceData.LipPressorR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipPressorR, out val) ? val : 0;
+        allData.faceData.LipPuckerL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipPuckerL, out val) ? val : 0;
+        allData.faceData.LipPuckerR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipPuckerR, out val) ? val : 0;
+        allData.faceData.LipStretcherL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipStretcherL, out val) ? val : 0;
+        allData.faceData.LipStretcherR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipStretcherR, out val) ? val : 0;
+        allData.faceData.LipSuckLB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipSuckLB, out val) ? val : 0;
+        allData.faceData.LipSuckLT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipSuckLT, out val) ? val : 0;
+        allData.faceData.LipSuckRB = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipSuckRB, out val) ? val : 0;
+        allData.faceData.LipSuckRT = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipSuckRT, out val) ? val : 0;
+        allData.faceData.LipTightenerL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipTightenerL, out val) ? val : 0;
+        allData.faceData.LipTightenerR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipTightenerR, out val) ? val : 0;
+        allData.faceData.LipsToward = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LipsToward, out val) ? val : 0;
+        allData.faceData.LowerLipDepressorL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LowerLipDepressorL, out val) ? val : 0;
+        allData.faceData.LowerLipDepressorR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.LowerLipDepressorR, out val) ? val : 0;
+        allData.faceData.MouthLeft = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.MouthLeft, out val) ? val : 0;
+        allData.faceData.MouthRight = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.MouthRight, out val) ? val : 0;
+        allData.faceData.NoseWrinklerL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.NoseWrinklerL, out val) ? val : 0;
+        allData.faceData.NoseWrinklerR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.NoseWrinklerR, out val) ? val : 0;
+        allData.faceData.OuterBrowRaiserL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.OuterBrowRaiserL, out val) ? val : 0;
+        allData.faceData.OuterBrowRaiserR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.OuterBrowRaiserR, out val) ? val : 0;
+        allData.faceData.UpperLidRaiserL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.UpperLidRaiserL, out val) ? val : 0;
+        allData.faceData.UpperLidRaiserR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.UpperLidRaiserR, out val) ? val : 0;
+        allData.faceData.UpperLipRaiserL = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.UpperLipRaiserL, out val) ? val : 0;
+        allData.faceData.UpperLipRaiserR = ovrFace.TryGetFaceExpressionWeight(OVRFaceExpressions.FaceExpression.UpperLipRaiserR, out val) ? val : 0;
 
         #endregion Face
 

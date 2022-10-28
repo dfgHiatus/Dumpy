@@ -172,10 +172,9 @@ public class OVRManifestPreprocessor
 
             // The following manifest entries are all handled through Oculus XR SDK Plugin
 #if !PRIORITIZE_OCULUS_XR_SETTINGS
-			ApplyOculusXRManifestTags(doc, androidNamespaceURI, modifyIfFound);
-#endif
-            // always generate target device manifest tags with internal build
+            ApplyOculusXRManifestTags(doc, androidNamespaceURI, modifyIfFound);
             ApplyTargetDevicesManifestTags(doc, androidNamespaceURI, true/*modifyIfFound*/);
+#endif
 
             doc.Save(destinationFile);
         }
@@ -503,9 +502,9 @@ public class OVRManifestPreprocessor
             if (OVRDeviceSelector.isTargetDeviceQuestPro)
             {
                 if (string.IsNullOrEmpty(targetDeviceValue))
-                    targetDeviceValue = "questpro";
+                    targetDeviceValue = "cambria";
                 else
-                    targetDeviceValue += "|questpro";
+                    targetDeviceValue += "|cambria";
             }
             if (string.IsNullOrEmpty(targetDeviceValue))
             {

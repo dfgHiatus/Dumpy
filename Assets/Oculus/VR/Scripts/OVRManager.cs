@@ -174,22 +174,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 		Boost = OVRPlugin.ProcessorPerformanceLevel.Boost,
 	}
 
-    public enum FeatureFidelity
-    {
-        Default = OVRPlugin.FeatureFidelity.Default,
-        Low = OVRPlugin.FeatureFidelity.Low,
-        MediumLow = OVRPlugin.FeatureFidelity.MediumLow,
-        Medium = OVRPlugin.FeatureFidelity.Medium,
-        MediumHigh = OVRPlugin.FeatureFidelity.MediumHigh,
-        High = OVRPlugin.FeatureFidelity.High,
-    }
-
-    public enum FeatureEnableState
-    {
-        Default = OVRPlugin.FeatureEnableState.Default,
-        Off = OVRPlugin.FeatureEnableState.Off,
-        On = OVRPlugin.FeatureEnableState.On,
-    }
 
 
     /// <summary>
@@ -882,110 +866,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
     [HideInInspector, Tooltip("Specify if Insight Passthrough should be enabled. Passthrough layers can only be used if passthrough is enabled.")]
     public bool isInsightPassthroughEnabled = false;
 
-    #region Feature Fidelity System
-    /// <summary>
-    /// If true, the FeatureFidelitySystem properties will be displayed
-    /// </summary>
-    [HideInInspector]
-    public bool expandFeatureFidelitySystemPropertySheet = false;
-
-    /// <summary>
-    /// Activate Feature Fidelity system on Quest
-    /// </summary>
-    [HideInInspector, Tooltip("Activate Feature Fidelity system on Quest.")]
-    public bool featureFidelitySystemActivated = false;
-
-    /// <summary>
-    /// Control the Feature Fidelity Setting for individual feature
-    /// </summary>
-    [Serializable]
-    public class FeatureFidelityGroup
-    {
-        /// <summary>
-        /// The target feature enablement state
-        /// </summary>
-        public FeatureEnableState targetFeatureEnabled = FeatureEnableState.Default;
-        /// <summary>
-        /// The target feature fidelity state
-        /// </summary>
-        public FeatureFidelity targetFeatureFidelity = FeatureFidelity.Default;
-        /// <summary>
-        /// The current feature enablement state
-        /// </summary>
-        [NonSerialized]
-        public FeatureEnableState currentFeatureEnabled = FeatureEnableState.Default;
-        /// <summary>
-        /// The current feature fidelity state
-        /// </summary>
-        [NonSerialized]
-        public FeatureFidelity currentFeatureFidelity = FeatureFidelity.Default;
-        /// <summary>
-        /// The the last TargetFeatureEnabled being set
-        /// </summary>
-        [NonSerialized]
-        public FeatureEnableState? lastSetTargetFeatureEnabled = null;
-        /// <summary>
-        /// The the last TargetFeatureFidelity being set
-        /// </summary>
-        [NonSerialized]
-        public FeatureFidelity? lastSetTargetFeatureFidelity = null;
-    }
-
-    /// <summary>
-    /// HandTracking Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("HandTracking Feature Fidelity")]
-    public FeatureFidelityGroup handTrackingFeatureFidelityGroup = new FeatureFidelityGroup();
-
-    /// <summary>
-    /// KeyboardTracking Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("KeyboardTracking Feature Fidelity")]
-    public FeatureFidelityGroup keyboardTrackingFeatureFidelityGroup = new FeatureFidelityGroup();
-
-    /// <summary>
-    /// EyeTracking Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("EyeTracking Feature Fidelity")]
-    public FeatureFidelityGroup eyeTrackingFeatureFidelityGroup = new FeatureFidelityGroup();
-
-    /// <summary>
-    /// FaceTracking Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("FaceTracking Feature Fidelity")]
-    public FeatureFidelityGroup faceTrackingFeatureFidelityGroup = new FeatureFidelityGroup();
-
-    /// <summary>
-    /// BodyTracking Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("BodyTracking Feature Fidelity")]
-    public FeatureFidelityGroup bodyTrackingFeatureFidelityGroup = new FeatureFidelityGroup();
-
-    /// <summary>
-    /// Passthrough Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("Passthrough Feature Fidelity")]
-    public FeatureFidelityGroup passthroughFeatureFidelityGroup = new FeatureFidelityGroup();
-
-    /// <summary>
-    /// Gaze-based Foveated Rendering Feature Fidelity
-    /// </summary>
-    [HideInInspector, Tooltip("Gaze-based Foveated Rendering Feature Fidelity")]
-    public FeatureFidelityGroup gaseBasedFoveatedRenderingFeatureFidelityGroup = new FeatureFidelityGroup();
-
-
-    [System.Obsolete("Deprecated. Please use handTrackingFeatureFidelityGroup.targetFeatureEnabled", true), HideInInspector]
-    public FeatureEnableState handTrackingFeatureEnabled = FeatureEnableState.Off;
-
-    [System.Obsolete("Deprecated. Please use handTrackingFeatureFidelityGroup.targetFeatureFidelity", true), HideInInspector]
-    public FeatureFidelity handTrackingFeatureFidelity = FeatureFidelity.Low;
-
-    [System.Obsolete("Deprecated. Please use handTrackingFeatureFidelityGroup.currentFeatureEnabled", true), HideInInspector]
-    public FeatureEnableState currentHandTrackingFeatureEnabled { get; private set; }
-
-    [System.Obsolete("Deprecated. Please use handTrackingFeatureFidelityGroup.currentFeatureFidelity", true), HideInInspector]
-    public FeatureFidelity currentHandTrackingFeatureFidelity { get; private set; }
-    #endregion
 
     #region Permissions
     /// <summary>`
@@ -1490,7 +1370,7 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 
     [SerializeField]
     [Tooltip("Available only for devices that support local dimming. It improves visual quality with a better display contrast ratio, but at a minor GPU performance cost.")]
-    private bool _localDimming = true;
+    private bool _localDimming = false;
 
     [Header("Tracking")]
     [SerializeField]
@@ -2444,71 +2324,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
         }
     }
 
-    private HashSet<OVRPlugin.FeatureType> featureFidelityGetFeatureStateErrorDumped = new HashSet<OVRPlugin.FeatureType>();
-
-    void UpdateFeatureFidelityGroup(OVRPlugin.FeatureType type, FeatureFidelityGroup group)
-    {
-        OVRPlugin.FeatureState idealFeatureState;
-        OVRPlugin.FeatureState currentFeatureState;
-        if (OVRPlugin.FeatureFidelityGetFeatureState(type, out idealFeatureState, out currentFeatureState))
-        {
-            // Debug.Log($"[UpdateFeatureFidelity] {type}: ideal {idealFeatureState.enableState} / {idealFeatureState.fidelity}, current {currentFeatureState.enableState} / {currentFeatureState.fidelity}");
-
-            group.currentFeatureEnabled = (FeatureEnableState)currentFeatureState.enableState;
-            group.currentFeatureFidelity = (FeatureFidelity)currentFeatureState.fidelity;
-
-            if (!group.lastSetTargetFeatureEnabled.HasValue || group.lastSetTargetFeatureEnabled != group.targetFeatureEnabled)
-            {
-                if ((FeatureEnableState)idealFeatureState.enableState != group.targetFeatureEnabled)
-                {
-                    if (OVRPlugin.FeatureFidelitySetFeatureEnable(type, (OVRPlugin.FeatureEnableState)group.targetFeatureEnabled))
-                    {
-                        Debug.Log($"[UpdateFeatureFidelity] Set {type} FeatureEnableState from {idealFeatureState.enableState} to {group.targetFeatureEnabled}");
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"[UpdateFeatureFidelity] Failed to set {type} FeatureEnableState: current {idealFeatureState.enableState}, target {group.targetFeatureEnabled}");
-                    }
-                }
-                group.lastSetTargetFeatureEnabled = group.targetFeatureEnabled;
-            }
-
-            if (!group.lastSetTargetFeatureFidelity.HasValue || group.lastSetTargetFeatureFidelity != group.targetFeatureFidelity)
-            {
-                if ((FeatureFidelity)idealFeatureState.fidelity != group.targetFeatureFidelity)
-                {
-                    if (OVRPlugin.FeatureFidelitySetFeatureFidelity(type, (OVRPlugin.FeatureFidelity)group.targetFeatureFidelity))
-                    {
-                        Debug.Log($"[UpdateFeatureFidelity] Set {type} FeatureFidelity from {idealFeatureState.fidelity} to {group.targetFeatureFidelity}");
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"[UpdateFeatureFidelity] Failed to set {type} FeatureFidelity: current {idealFeatureState.fidelity}, target {group.targetFeatureFidelity}");
-                    }
-                }
-                group.lastSetTargetFeatureFidelity = group.targetFeatureFidelity;
-            }
-        }
-        else
-        {
-            if (!featureFidelityGetFeatureStateErrorDumped.Contains(type))
-            {
-                Debug.LogWarning($"[UpdateFeatureFidelity] Unable to get feature state for {type}");
-                featureFidelityGetFeatureStateErrorDumped.Add(type);
-            }
-        }
-    }
-
-    void UpdateFeatureFidelity()
-    {
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.HandTracking, handTrackingFeatureFidelityGroup);
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.KeyboardTracking, keyboardTrackingFeatureFidelityGroup);
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.EyeTracking, eyeTrackingFeatureFidelityGroup);
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.FaceTracking, faceTrackingFeatureFidelityGroup);
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.BodyTracking, bodyTrackingFeatureFidelityGroup);
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.Passthrough, passthroughFeatureFidelityGroup);
-        UpdateFeatureFidelityGroup(OVRPlugin.FeatureType.GazeBasedFoveatedRendering, gaseBasedFoveatedRenderingFeatureFidelityGroup);
-    }
 
     private static bool multipleMainCameraWarningPresented = false;
     private static bool suppressUnableToFindMainCameraMessage = false;

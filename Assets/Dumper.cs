@@ -1,20 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO.MemoryMappedFiles;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Dumper : MonoBehaviour
 {
-    [SerializeField]
-    OVREyeGaze leftEyeGaze;
-
-    [SerializeField]
-    OVREyeGaze rightEyeGaze;
-
-    [SerializeField]
-    OVRFaceExpressions faceExpressions;
+    public OVREyeGaze leftEyeGaze;
+    public OVREyeGaze rightEyeGaze;
+    public OVRFaceExpressions faceExpressions;
 
     private MemoryMappedFile memMapFile;
     private MemoryMappedViewAccessor accessor;
@@ -25,37 +17,49 @@ public class Dumper : MonoBehaviour
     {
         Application.runInBackground = true;
 
+        bool eyesInit = true;
         if (!leftEyeGaze.EyeTrackingEnabled)
         {
             Debug.LogWarning("Left eye tracking is not allowed! Please enable it in the Oculus app.");
+            eyesInit = false;
         }
-
-        if (!leftEyeGaze.EyeTrackingEnabled)
+        if (!rightEyeGaze.EyeTrackingEnabled)
         {
             Debug.LogWarning("Right eye tracking is not allowed! Please enable it in the Oculus app.");
+            eyesInit = false;
+        }
+        if (eyesInit)
+        {
+            Debug.Log("Eye tracking session has started!"); 
         }
 
-        Debug.Log("Eye tracking session has started!");
-
-        if (!leftEyeGaze.EyeTrackingEnabled)
+        bool faceInit = true;
+        if (!faceExpressions.FaceTrackingEnabled)
         {
             Debug.LogWarning("Face tracking is not allowed! Please enable it in the Oculus app.");
+            faceInit = false;
         }
-
-        Debug.Log("Face tracking session has started!");
-
-        dataFB = new FBData(leftEyeGaze, rightEyeGaze, faceExpressions);
-
-        memMapFile = MemoryMappedFile.CreateNew("VarjoEyeTracking", Marshal.SizeOf(dataFB.allData));
-        accessor = memMapFile.CreateViewAccessor();
-
-        Debug.Log("Created memory mapped IO!");
+        else
+        {
+            Debug.Log("Face tracking session has started!");
+        }
+        
+        if (eyesInit && faceInit)
+        {
+            dataFB = new FBData(leftEyeGaze, rightEyeGaze, faceExpressions);
+            memMapFile = MemoryMappedFile.CreateNew("QuestProEyeTracking", Marshal.SizeOf(dataFB.allData));
+            accessor = memMapFile.CreateViewAccessor();
+            Debug.Log("Created memory mapped IO!");  
+        }
     }
 
     void Update()
     {
-        dataFB.Update();
-        accessor.Write(0, ref dataFB.allData);
+        if (dataFB != null && memMapFile != null)
+        {
+            dataFB.Update();
+            accessor.Write(0, ref dataFB.allData);
+        }
 
         if (Input.GetKeyDown(KeyCode.F1))
             Spam = !Spam;
@@ -77,8 +81,17 @@ public class Dumper : MonoBehaviour
     void OnApplicationQuit()
     {
         Debug.Log("Destroying memory mapped IO...");
-        accessor.Dispose();
-        memMapFile.Dispose();
+        
+        if (accessor != null)
+        {
+            accessor.Dispose();
+        }
+
+        if (memMapFile != null)
+        {
+            memMapFile.Dispose();  
+        }
+        
         Debug.Log("Destroyed memory mapped IO!");
     }
 }
