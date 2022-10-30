@@ -78,7 +78,7 @@ namespace Shinn
         }
 
         /// <summary>
-        /// A window that displayss the recorded logs.
+        /// A window that displays the recorded logs.
         /// </summary>
         /// <param name="windowID">Window ID.</param>
         void ConsoleWindow(int windowID)
